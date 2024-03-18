@@ -29,3 +29,24 @@
 
 
 # Archive
++ Може да се извади един документ -> едно копие
++ Могат да се правят instant changes 
++ Организираност
+
+### Съхраняване на HDD 
+Място - Живот - Бързина 
+Около 1 TB | до 5 години живот | Бързо
+
+### Съхраняване в облачно пространство
++ Amazone Web Services (AWS) -> S3 backup -> S3 Glacier
+
+  S3 Glacier storage класовете осигуряват практически неограничена мащабируемост и са проектирани за 99,999999999% трайност на данните. Класовете за съхранение S3 Glacier предоставят възможности за най-бърз достъп до архивираните данни и най-евтиното архивно съхранение в облака. 
+
+  Има три класа за съхранение на архиви, оптимизирани за различни модели на достъп и продължителност на съхранение.
+  + **S3 Glacier Instant Retrieval storage class**- lowest cost storage with milliseconds retrieval
+  + **S3 Glacier Flexible Retrieval** -  retrieval in minutes or free bulk retrievals in 5-12 hours
+  + **S3 Glacier Deep Archive** - the lowest cost storage in the cloud with data retrieval within 12 hours
+
+### Съхраняване на видео касети 
+Място - Живот - Бързина 
+Около 8 TB | до 35 години живот | Отнема време
