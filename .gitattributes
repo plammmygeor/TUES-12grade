@@ -1,4 +1,4 @@
 # .gitattributes
 
 # Treat files with .md extension as text files
-*.md text
+*.md README.md
