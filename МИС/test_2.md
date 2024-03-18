@@ -18,4 +18,4 @@ MDZ - има достъп, но той е ограничен и не може а
 Zone-based Policy Firewall (ZPF) -  changes the firewall from the older interface-based model to a more flexible, more easily understood zone-based configuration model. Interfaces are assigned to zones, and an inspection policy is applied to traffic moving between the zones.
 
 
-## IP Tables
+## IP Tables (29.01.24)
