@@ -96,7 +96,29 @@ def delete_sensor_data(sensor_id, data_id):
         return "", 204
     else:
         return jsonify({"error": "Sensor data not found"}), 404
+    
+@app.route("/motion-sensors/count", methods=["GET"])
+def count_sensors():
+    count = sensor_collection.count_documents({})
+    return jsonify({"count": count}), 200
 
+@app.route("/motion-sensors/limit", methods=["GET"])
+def limit_sensors():
+    # Example: limiting the number of sensors returned to 2
+    sensors = sensor_collection.find({}).limit(2)
+    return jsonify(json.loads(json_util.dumps(list(sensors)))), 200 
+
+@app.route("/motion-sensors/sort", methods=["GET"])
+def sort_sensors():
+    sort_sensor = sensor_collection.find().sort({"manufacturer":-1})
+    return jsonify({"sorted data": sort_sensor}), 200
+
+@app.route("/motion-sensors/operations", methods=["GET"])
+def operation():
+    greater = sensor_collection.find( { "sensor_id": { "$gt": 2 } } )
+    equal = sensor_collection.find( {"sensor_id": { "$eq": 4} } )
+    less = sensor_collection.find( {"sensor_id": { "$lt": 5} } )
+    return jsonify(json.loads(json_util.dumps(list(greater, equal, less)))), 200
 
 # Ensures that when we start our app using "$ python3 main.py" we'll have a connection to the database
 if __name__ == "__main__":
