@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from dash import Dash, html, callback, Output, Input, dash_table, dcc
 
 DATABASE_NAME = "dash-exercise"
-CONNECTION_STRING = "mongodb+srv://plamenavgeorgieva2019:ZGQh6Z2y9qB52p5y@tues-iot.kgcueop.mongodb.net/?retryWrites=true&w=majority&appName=TUES-IoT"
+CONNECTION_STRING = ""
 
 app = Dash(__name__)
 
@@ -27,9 +27,6 @@ app.layout = html.Div(id="html-div", children=[
 )
 
 def update_tables_info(_):
-    air_quality_sensor_collection = database.get_collection("air_quality_sensors")
-    air_quality_sensor_data_collection = database.get_collection("air_quality_sensor_data")
-    
     sensors = list(air_quality_sensor_collection.find({}))
     sensor_data = list(air_quality_sensor_data_collection.find({}))
     
