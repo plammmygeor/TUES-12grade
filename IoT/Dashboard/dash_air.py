@@ -1,8 +1,10 @@
 from pymongo import MongoClient
 from dash import Dash, html, callback, Output, Input, dash_table, dcc
 
+import certifi
+
 DATABASE_NAME = "dash-exercise"
-CONNECTION_STRING = ""
+CONNECTION_STRING = "mongodb+srv://plamenavgeorgieva2019:ZGQh6Z2y9qB52p5y@tues-iot.kgcueop.mongodb.net/?retryWrites=true&w=majority&appName=TUES-IoT"
 
 app = Dash(__name__)
 
@@ -40,7 +42,7 @@ def update_tables_info(_):
 
 
 if __name__ == "__main__":
-    mongo_client = MongoClient(CONNECTION_STRING)
+    mongo_client = MongoClient(CONNECTION_STRING, tlsCAFile=certifi.where())
     database = mongo_client.get_database(DATABASE_NAME)
     air_quality_sensor_collection = database.get_collection("air_quality_sensors")
     air_quality_sensor_data_collection = database.get_collection("air_quality_sensor_data")
