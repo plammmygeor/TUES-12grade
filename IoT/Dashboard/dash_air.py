@@ -2,7 +2,6 @@ from pymongo import MongoClient
 from dash import Dash, html, callback, Output, Input, dash_table, dcc
 
 DATABASE_NAME = "dash-exercise"
-# Insert your MongoDB connection string here
 CONNECTION_STRING = "mongodb+srv://plamenavgeorgieva2019:ZGQh6Z2y9qB52p5y@tues-iot.kgcueop.mongodb.net/?retryWrites=true&w=majority&appName=TUES-IoT"
 
 # Same initialization as for a Flask app, but for a Dash app
@@ -82,5 +81,4 @@ if __name__ == "__main__":
     database = mongo_client.get_database(DATABASE_NAME)
     air_quality_sensor_collection = database.get_collection("air_quality_sensors")
     air_quality_sensor_data_collection = database.get_collection("air_quality_sensor_data")
-    # Note the port - 8050 instead of 8000, we will use 8000 when sending requests to the Flask app
     app.run(debug=True, port=8050)
