@@ -45,8 +45,8 @@ print(photo_url)
 
 
 def main():
-    song_file = r'C:\Users\plami\Downloads\soongaws.mp3'  # Use raw string or properly escape backslashes
-    photo_title = "How Far I'll Go"  # Ensure title matches exactly
+    song_file = 'C:\Users\plami\Downloads\soongaws.mp3'  
+    photo_title = "How Far I'll Go" 
 
     sample = extract_sample(song_file)
 
